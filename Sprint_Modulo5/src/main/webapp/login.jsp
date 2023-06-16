@@ -13,7 +13,7 @@
 		<div class="container mt-5">
 				<h1 class="text-center">Incio de Sesion</h1>
 			<div class="col-4 offset-4 ">
-		      <form action="ServletLogin" method="post" id="form-login">
+		      <form id="form-login" action="ServletLogin" method="post" >
 		        <div class="mb-3">
 		          <label for="exampleInputEmail1" class="form-label">Usuario</label>
 		          <input
@@ -21,8 +21,9 @@
 		            class="form-control"
 		            id="InputUser"
 		        	name="usuario"
-		        	required
+		        	
 		          />
+		          <small id="userHelp" class=" form-text text-danger" style="display:none;">El campo Usuario no puede estar vacío</small>
 		        </div>
 		
 		        <div class="mb-3">
@@ -32,12 +33,13 @@
 		            class="form-control"
 		            id="InputPassword"
 		            name="password"
-		            required
+		            
 		          />
-		    
+		   		 <small id="passHelp" class=" form-text text-danger" style="display:none;">El campo Contraseña no puede estar vacío</small>
 		        </div>
 		        <div class="d-grid gap-2">
 		          <button type="submit" class="btn btn-success">Acceder</button>
+		   		 <small id="finalHelp" class=" form-text text-danger" style="display:none;">Debe llenar los campos vacios.</small>
 		        </div>
 		      </form>
 		

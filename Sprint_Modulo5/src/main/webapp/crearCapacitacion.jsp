@@ -32,7 +32,7 @@
 							placeholder="88.231.332-k"
 							name="rutCliente"
 							>
-						<small id="rutClienteHelp" class=" form-text text-danger"> </small>
+						<small id="rutClienteHelp" class=" form-text text-danger" style="display:none;">El campo no puede estar vacio.</small>
 					</div>
 		  
 					<div class="form-group fs-3 mt-4">
@@ -44,7 +44,7 @@
 						  placeholder="Lunes, Martes, Mier..."
 						  name="dia"
 						   >		  
-					  <small id="diaHelp" class=" form-text text-danger"> </small>
+					  <small id="diaHelp" class=" form-text text-danger" style="display:none;">El campo no puede estar vacio.</small>
 					</div> 
 		  
 					<div class="form-group fs-3 mt-4">
@@ -56,7 +56,7 @@
 					  		placeholder="HH:MM"
 					  		name="hora"
 					  		>
-					  <small id="horaHelp" class=" form-text text-danger"> </small>
+					  <small id="horaHelp" class=" form-text text-danger" style="display:none;">El campo no puede estar vacio.</small>
 					</div>   
 					<div class="form-group fs-3 mt-4">
 					  <label for="lugar">Lugar:</label>
@@ -67,7 +67,7 @@
 					  		placeholder="-"
 					  		name="lugar"
 					  		>
-					  <small id="lugarHelp" class=" form-text text-danger"> </small>
+					  <small id="lugarHelp" class=" form-text text-danger" style="display:none;">El campo no puede estar vacio.</small>
 					</div>   
 					<div class="form-group fs-3 mt-4">
 					  <label for="duracion">Duración:</label>
@@ -78,7 +78,7 @@
 					  		placeholder="X horas"
 					  		name="duracion"
 					  		>
-					  <small id="duracionHelp" class=" form-text text-danger"> </small>
+					  <small id="duracionHelp" class=" form-text text-danger" style="display:none;">El campo no puede estar vacio.</small>
 					</div>   
 					<div class="form-group fs-3 mt-4">
 					  <label for="cantAsistentes">Cantidad de asistentes:</label>
@@ -88,9 +88,9 @@
 					  		id="cantAsistentes" 
 					  		placeholder="-"
 					  		name="cantAsistentes"
-					  		value="0"
+					  		value = 0
 					  		>
-					  <small id="cantAsistentesHelp" class=" form-text text-danger"> </small>
+					  <small id="cantAsistHelp" class=" form-text text-danger" style="display:none;">La cantidad de asistentes no puede ser 0.</small>
 					</div>
 					
 					<input type="hidden" name="opcion" value="crearCapacitacion">

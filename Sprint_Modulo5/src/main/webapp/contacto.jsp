@@ -7,7 +7,7 @@
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"  rel="stylesheet">
 		<title>Contacto</title>
 		<link rel="stylesheet" href="css/styles.css">
-		<script src="js/validacion-contacto.js"></script>
+		
 	</head>
 	<body>
 		<!-- Navbar -->
@@ -38,7 +38,7 @@
 					<div class="form-group fs-3 mt-4">
 					  <label for="email">Email: </label>
 					  <input 
-					  		type="email" 
+					  		type="text" 
 					  		class="form-control fs-4" 
 					  		id="email" 
 					  		placeholder="jConnor@skynet.com"
@@ -57,7 +57,7 @@
 					  		placeholder="-"
 					  		name="asunto"					  		
 					  		>
-					  <small id="asuntoHelp" class=" form-text text-danger"> </small>
+					  <small id="asuntoHelp" class=" form-text text-danger" style="display:none;">Asunto no puede estar vacío.</small>
 					</div>   
 		  
 					<div class="form-group fs-3 mt-4">
@@ -69,7 +69,7 @@
 					  		placeholder="Escribenos y nos contactaremos contigo."
 					  		name="mensaje"					  		
 					  		></textarea>
-					  <small id="textHelp" class=" form-text text-danger"> </small>
+					  <small id="textHelp" class=" form-text text-danger" style="display:none;">Mensaje no puede estar vacío.</small>
 					</div>
 		  			
 		  			<div class="d-grid gap-2"> 
@@ -89,6 +89,6 @@
 		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
 		<!-- Fin JavaScript de bootstrap -->
-		
+		<script src="js/validacion-contacto.js"></script>
 	</body>
 </html>

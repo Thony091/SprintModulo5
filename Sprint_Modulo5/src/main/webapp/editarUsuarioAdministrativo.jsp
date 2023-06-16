@@ -18,13 +18,11 @@
 			
 		 <div class="row mt-2">
 			
-			
-	
-   	<!-- Codigo del Formulario Edicion Administrativo -->
+	   	<!-- Codigo del Formulario Edicion Administrativo -->
 		    <div class="col-xs-12 offset-1 col-md-10 " style="justify-content: space-around;">
 				<h1 class="text-center">Editar perfil de Administrativo</h1>
 		    
-		      <form action="ServletCrudUsuario" method="post" >
+		      <form id="form-editor" action="ServletCrudUsuario" method="post" >
 		      
 		      	<div class="mb-3">
 		      		
@@ -46,28 +44,27 @@
                     required
                         />
 		      		
-		          <label for="InputNombres" class="form-label">Nombre(s):</label>
+		          <label for="InputNombre" class="form-label">Nombre(s):</label>
 		          <input
 		            type="text"
 		            class="form-control"
-		            id="InputNombres"
+		            id="InputNombre"
 		        	name="nombre"
-		        	value="${administrativo.nombre}"
-		        	required
+		        	placeholder="${administrativo.nombre}"
 		          />
+		          <small id="nameHelp" class=" form-text text-danger" style="display:none;">El campo no puede estar vacio.</small>
 		        </div>
 		
 		        <div class="mb-3">
-		          <label for="InputApellidos" class="form-label">Apellido(s):</label>
+		          <label for="InputApellido" class="form-label">Apellido(s):</label>
 		          <input
 		            type="text"
 		            class="form-control"
-		            id="InputApellidos"
+		            id="InputApellido"
 		            name="apellidos"
-		            value="${administrativo.apellido}"
-		            required
+		            placeholder="${administrativo.apellido}"
 		          />
-		    
+		    	<small id="lastnameHelp" class=" form-text text-danger" style="display:none;">El campo no puede estar vacio.</small>
 		        </div>
 		        
 		            <div class="mb-3">
@@ -77,9 +74,9 @@
 		            class="form-control"
 		            id="InputFechaNacimiento"
 		        	name="fechaNacimiento"
-		        	value="${administrativo.fechaNacimiento}"
-		        	required
+		        	placeholder="${administrativo.fechaNacimiento}"
 		          />
+		          <small id="fechNacimHelp" class="form-text text-danger" style="display:none;">El campo no puede estar vacio.</small>
 		        </div>
 		        
 		            <div class="mb-3">
@@ -89,9 +86,9 @@
 		            class="form-control"
 		            id="InputRun"
 		        	name="run"
-		        	value="${administrativo.run}"
-		        	required
+		        	placeholder="${administrativo.run}"
 		          />
+		          <small id="runHelp" class="form-text text-danger" style="display:none;">El campo no puede estar vacio.</small>
 		        </div>
 		        
 		            <div class="mb-3">
@@ -101,9 +98,9 @@
 		            class="form-control"
 		            id="InputArea"
 		        	name="area"
-		        	value="${administrativo.area}"
-		        	required
+		        	placeholder="${administrativo.area}"
 		          />
+		          <small id="areaHelp" class="form-text text-danger" style="display:none;">El campo no puede estar vacio.</small>
 		        </div>
 		        
 		        
@@ -114,9 +111,9 @@
 		            class="form-control"
 		            id="InputExperiencia"
 		        	name="experienciaPrevia"
-		        	value="${administrativo.experienciaPrevia}"
-		        	required
+		        	placeholder="${administrativo.experienciaPrevia}"
 		          />
+		          <small id="exPrevHelp" class="form-text text-danger" style="display:none;">El campo no puede estar vacio.</small>
 		        </div>
 		        <input type="hidden" name="opcion" value="updateUsuario">
 		        <div class="d-grid gap-2">
@@ -127,7 +124,7 @@
 		
 		    </div>
 		  </div>
-		<!-- Fin Codigo del Formulario Login -->
+		<!-- Fin Codigo del Formulario Editar -->
 			
 
 		</div>
@@ -140,7 +137,6 @@
 		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
 		<!-- Fin JavaScript de bootstrap -->
-		      		
-
-</body>
+		<script src="js/validacion-editar-admin.js"></script>
+	</body>
 </html>

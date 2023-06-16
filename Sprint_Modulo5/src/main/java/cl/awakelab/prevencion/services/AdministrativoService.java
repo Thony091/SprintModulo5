@@ -90,7 +90,7 @@ public class AdministrativoService {
 	      statement.setString(4, administrativo.getRun());	 
 	      statement.setString(5, administrativo.getArea());
 	      statement.setString(6, administrativo.getExperienciaPrevia());
-	      statement.setInt(7, administrativo.getIdAdministrativo());
+	      statement.setInt(7, administrativo.getId());
 		     
 	      statement.executeUpdate();
 		      

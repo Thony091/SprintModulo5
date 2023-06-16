@@ -1,81 +1,59 @@
 // Validacion de Campos con JavaScript
-document.addEventListener("DOMContentLoaded", function(){
+document.querySelector("#form-contacto").addEventListener("submit", function(event){
+	event.preventDefault();
 	// Obtener el formulario y sus campos
-	let form = document.querySelector("#form-contacto");
-	let name = document.querySelector("#name");
-	let email = document.querySelector("#email");
-	//let otroemail = document.getElementById('email');
-	let asunto = document.querySelector("#asunto");
-	let mensaje = document.querySelector("#text-area");
-
-
-	function contactoValidate() {
-
-		let nameValue = name.value;
-		let emailValue = email.value;
-		let asuntoValue = asunto.value;
-		let mensajeValue = mensaje.value;
-		let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-		//validacion general
-		if (nameValue.length === 0 || emailValue.length === 0 || asuntoValue.length === 0 || mensajeValue.length === 0 || mensajeValue.length < 10) {
-			document.querySelector("#finalHelp").innerHTML = "Debe llenar todos los campos correctamente.";
-			return false;
-		}
-
+	
+	let name = document.querySelector("#name").value;
+	let email = document.querySelector("#email").value;
+	let asunto = document.querySelector("#asunto").value;
+	let mensaje = document.querySelector("#text-area").value;
+	
+	let isValid = true;
+	let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 		
 		// Validando nombre
-		if (nameValue.length == 0) {
-			document.querySelector("#nameHelp").innerHTML = "El campo Nombre no puede estar vacío";
-			return false;
+		if (name.trim() == "") {
+			isValid = false;
+			document.querySelector("#nameHelp").innerHTML = "El campo Nombre no puede estar vacío";			
+		} else if(name.length < 3) {
+			document.querySelector("#nameHelp").innerHTML = "El nombre debe contener almenos 3 caracteres.";
 		} else {
 			document.querySelector("#nameHelp").innerHTML = " ";
 		}
-		console.log(nameValue);
-		// Validando email
-		if (emailValue.length == 0) {
-			document.querySelector("#emailHelp").innerHTML = "El Campo Email no debe estar vacío";
-			return false;
-		} else if (!emailRegex.test(emailValue)) {
-			document.querySelector("#mailHelp").innerHTML = "Por favor, ingresa un correo electronico válido";
-			return false;
-		} else {
-			document.querySelector("#mailHelp").innerHTML = " ";
-		}
-		console.log(emailValue);
-
-		// Validando asunto
-		if (asuntoValue.length == 0) {
-			document.querySelector("#asuntoHelp").innerHTML = "Asunto no puede estar vacío";
-			return false;
-
-		} else {
-			document.querySelector("#asuntoHelp").innerHTML = " ";
-		}
-		// Validando mensaje
-		if (mensajeValue.trim() == "") {
-			document.querySelector("#textHelp").innerHTML = "Mensaje no puede estar vacío, mínimo 10 caracteres";
-			return false;
-		} else if (mensajeValue.length < 10) {
-			document.querySelector("#textHelp").innerHTML = "Mensaje no puede estar vacío, mínimo 10 caracteres";
-			return false;
-		} else {
-			document.querySelector("#textHelp").innerHTML = " ";
-		}
-
 		
-		//Si todo esta bien y pasaron todas las validaciones, se enviara el formulario.
-		return true;
-	}
-
-	// Agregamos la función de validación al evento submit del formulario
-	form.addEventListener("submit", function(event) {
-
-		//* Si la funcion validate retorna un false no se enviará el formulario
-		if (!contactoValidate()) {
-			event.preventDefault();
-			// impido que se envie el formulario            
+		// Validando email
+		if (email.trim() === "") {
+			isValid = false;
+			document.querySelector("#mailHelp").innerHTML = "El Campo Email no debe estar vacío";
+		} else if (!emailRegex.test(email)) {
+			isValid = false;
+			document.querySelector("#mailHelp").innerHTML = "Por favor, ingresa un correo electronico válido";
+		} else {
+			document.querySelector("#mailHelp").style.display = "none";
 		}
-	})
+		
+
+		// Validando asunto. Ocultamos o mostramos mensaje de ayuda con (style="display:orden")" --OJO: debe estar en el DOM y en JS
+		if (asunto.length === 0) {
+			isValid = false;
+			document.querySelector("#asuntoHelp").style.display = "block";
+		} else {
+			document.querySelector("#asuntoHelp").style.display = "none";
+		}
+		
+		// Validando mensaje. Ocultamos o mostramos mensaje de ayuda con (style="display:orden")" |--OJO: debe estar en el DOM y en JS
+		if (mensaje.trim() ==="") {
+			isValid = false;
+			document.querySelector("#textHelp").style.display = "block";
+		} else if (mensaje.length < 10) {
+			isValid = false;
+			document.querySelector("#textHelp").innerHTML = "Debe contener como mínimo 10 caracteres";
+		} else {
+			document.querySelector("#textHelp").style.display = "none";
+		}
+		
+		if(isValid) {
+		event.target.submit();
+	}
 
 });
