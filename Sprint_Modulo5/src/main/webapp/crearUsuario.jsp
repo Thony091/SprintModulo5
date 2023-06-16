@@ -22,7 +22,7 @@
 			
 	
    	<!-- Codigo del Formulario Login -->
-		    <div class="col-xs-12 offset-1 col-md-10 " style="justify-content: space-around;">
+		    <div class="col-xs-12 offset-1 col-md-10 " id="form-crear-usuario" style="justify-content: space-around;">
 				<h1 class="text-center">Registro Nuevo Usuario</h1>
 		    
 		      <form action="ServletCrudUsuario" method="post" >
@@ -34,7 +34,7 @@
 		            class="form-control"
 		            id="user"
 		        	name="usuario"
-		        	required
+		        	
 		          />
 		        </div>
 		
@@ -175,5 +175,7 @@
 		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
 		<!-- Fin JavaScript de bootstrap -->
+		
+		<script src="js/validacion-crear-usuario.js"></script>
 	</body>
 </html>

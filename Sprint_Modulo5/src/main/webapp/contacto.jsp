@@ -7,6 +7,7 @@
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"  rel="stylesheet">
 		<title>Contacto</title>
 		<link rel="stylesheet" href="css/styles.css">
+		<script src="js/validacion-contacto.js"></script>
 	</head>
 	<body>
 		<!-- Navbar -->
@@ -20,7 +21,7 @@
 
 				  <h1 class="offset-1 col-10 fs-1 text-center"><strong> Enviar una consulta </strong></h1>
 				  
-				  <form action="ServletCrudContacto" method="POST" class="offset-1 col-10 form mb-5 mt-3">
+				  <form id="form-contacto" action="ServletCrudContacto" method="POST" class="offset-1 col-10 form mb-5 mt-3">
 					<div class="form-group fs-3 mt-4">
 						<label for="name">Nombre completo:</label>
 						<input 
@@ -29,6 +30,7 @@
 								id="name" 
 								placeholder="Juanito Connor"
 								name="nombreCompleto"
+								
 								>
 						<small id="nameHelp" class=" form-text text-danger"> </small>
 					</div>
@@ -40,7 +42,7 @@
 					  		class="form-control fs-4" 
 					  		id="email" 
 					  		placeholder="jConnor@skynet.com"
-					  		name="email"
+					  		name="email"					  		
 					  		>
 		  
 					  <small id="mailHelp" class=" form-text text-danger"> </small>
@@ -53,7 +55,7 @@
 					  		class="form-control fs-4" 
 					  		id="asunto" 
 					  		placeholder="-"
-					  		name="asunto"
+					  		name="asunto"					  		
 					  		>
 					  <small id="asuntoHelp" class=" form-text text-danger"> </small>
 					</div>   
@@ -65,7 +67,7 @@
 					  		id="text-area" 
 					  		rows="4" 
 					  		placeholder="Escribenos y nos contactaremos contigo."
-					  		name="mensaje"
+					  		name="mensaje"					  		
 					  		></textarea>
 					  <small id="textHelp" class=" form-text text-danger"> </small>
 					</div>
@@ -76,9 +78,7 @@
 		  			</div>
 				  </form>
 				</div>
-			  </main>
-		  <script src="https://code.jquery..com/jquery-3.6.0.min.js"></script>
-		<script src="js/app.js"></script>
+			  </main>		  
 		</div>
 		
 		<!-- Footer -->
@@ -89,5 +89,6 @@
 		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
 		<!-- Fin JavaScript de bootstrap -->
+		
 	</body>
 </html>
