@@ -21,11 +21,11 @@
 			
 			
 	
-   	<!-- Codigo del Formulario Login -->
-		    <div class="col-xs-12 offset-1 col-md-10 " id="form-crear-usuario" style="justify-content: space-around;">
+   	<!-- Codigo del Formulario Crear Usuario -->
+		    <div class="mx-auto col-10 offset-1 col-sm-12 col-md-11" style="justify-content: space-around;">
 				<h1 class="text-center">Registro Nuevo Usuario</h1>
 		    
-		      <form action="ServletCrudUsuario" method="post" >
+		      <form id="crearusuario-form" action="ServletCrudUsuario" method="post" >
 		      
 		        <div class="mb-3">
 		          <label for="user" class="form-label">Usuario</label>
@@ -33,9 +33,9 @@
 		            type="text"
 		            class="form-control"
 		            id="user"
-		        	name="usuario"
-		        	
+		        	name="usuario"		        	
 		          />
+		          <small id="userHelp" class="text-danger" style="display:none;">El campo usuario no puede estar vacío </small>
 		        </div>
 		
 		        <div class="mb-3">
@@ -43,12 +43,11 @@
 		          <input
 		            type="password"
 		            class="form-control"
-		            id="pass"
+		            id="password"
 		            name="password"
-		            required
 		          />
-		    
-		        </div>
+		          <small id="passwordHelp" class="text-danger" style="display:none;">El campo contraseña no puede estar vacío </small>
+		          </div>
 		        
 		            <div class="mb-3">
 		          <label for="run" class="form-label">Run:</label>
@@ -57,8 +56,9 @@
 		            class="form-control"
 		            id="run"
 		        	name="run"
-		        	required
 		          />
+		          <small id="runclienteHelp" class="text-danger" style="display:none;">El campo RUN no puede estar vacío </small>
+		          <small id="runclienteHelp2" class="text-danger" style="display:none;">El run debe tener almenos 8 digitos </small>
 		        </div>
 		        
 		            <div class="mb-3">
@@ -68,8 +68,8 @@
 		            class="form-control"
 		            id="fechaNacimiento"
 		        	name="fechaNacimiento"
-		        	required
 		          />
+		          <small id="fechaNacimientoHelp" class="text-danger" style="display:none;">El campo fecha de nacimiento no puede estar vacío </small>
 		        </div>
 		        
 		            <div class="mb-3">
@@ -79,8 +79,8 @@
 		            class="form-control"
 		            id="names"
 		        	name="nombre"
-		        	required
 		          />
+		          <small id="namesHelp" class="text-danger" style="display:none;">El campo nombres no puede estar vacío </small>
 		        </div>
 		        
 		        
@@ -91,13 +91,13 @@
 		            class="form-control"
 		            id="lastName"
 		        	name="apellido"
-		        	required
 		          />
+		          <small id="lastNameHelp" class="text-danger" style="display:none;">El campo apellidos no puede estar vacío </small>
 		        </div>
 		        
 		        <div class="mb-5">
 		        	<label for="tipoUsuario" class="form-label">Tipo de Usuario:</label>		        	
-                    <select id="tipoUsuario" name="tipoUsuario" class="form-select" aria-label="Default select example" required>
+                    <select id="tipoUsuario" name="tipoUsuario" class="form-select" aria-label="Default select example" >
 						<option value="" selected disabled>Elegir un Tipo de Usuario</option>
 						<option value="Cliente">Cliente</option>
 						<option value="Profesional">Profesional</option>
@@ -106,42 +106,53 @@
 		        </div>
 		        
 		        <div id="cliente" style="display: none;" class="mt-3">	
-		        	<h4>Datos requeridos para Usuarios de Tipo Cliente</h4>		        	
+		        	<h4>Datos requeridos para Usuarios de Tipo Cliente</h4>	
+		        		        	
 					<label for="telefono" class="form-label">Teléfono:</label>
 				    <input type="number" name="telefono" id="telefono" class="form-control"/>    
-		        	
+		        	<small id="telefonoHelp" class="text-danger" style="display:none;">El campo teléfono no puede estar vacío </small>
+					
 					<label for="afp" class="form-label">AFP:</label>
 				    <input type="text" name="afp" id="afp" class="form-control"/>
-		        					        
+				    <small id="afpHelp" class="text-danger" style="display:none;">El campo AFP no puede estar vacío </small>
+				    
 					<label for="sistemaSalud" class="form-label">Sistema Salud:</label>
 				    <input type="text" name="sistemaSalud" id="sistemaSalud" class="form-control"/>
+				    <small id="sistemaSaludHelp" class="text-danger" style="display:none;">El campo sistema salud no puede estar vacío </small>
 		        	
 					<label for="direccion" class="form-label">Dirección:</label>
 				    <input type="text" name="direccion" id="direccion" class="form-control"/>
+				    <small id="direccionHelp" class="text-danger" style="display:none;">El campo direccion no puede estar vacío </small>
 				    
 					<label for="comuna" class="form-label">Comuna:</label>
 				    <input type="text" name="comuna" id="comuna" class="form-control"/>
+				    <small id="comunaHelp" class="text-danger" style="display:none;">El campo comuna no puede estar vacío </small>
 				    
 					<label for="edad" class="form-label">Edad:</label>
 				    <input type="number" name="edad" id="edad" class="form-control"/>
+				    <small id="edadHelp" class="text-danger" style="display:none;">El campo edad no puede estar vacío </small>
 				</div>
 				
 				<div id="profesional" style="display: none;">
 					<h4>Datos requeridos para Usuarios de Tipo Profesional</h4>
-					<label for="titulo" class="form-label mt-3">Titulo:</label>
+					<label for="titulo" class="form-label mt-3">Título:</label>
 				    <input type="text" name="titulo" id="titulo" class="form-control"/>
+				    <small id="tituloHelp" class="text-danger" style="display:none;">El campo título no puede estar vacío </small>
 
 					<label for="fechaIngreso" class="form-label mt-3">Fecha de Ingreso:</label>
-				    <input type="text" name="fechaIngreso" id="fechaIngreso" class="form-control"/>				       		    
+				    <input type="text" name="fechaIngreso" id="fechaIngreso" class="form-control"/>
+				    <small id="fechaIngresoHelp" class="text-danger" style="display:none;">El campo fecha de ingreso no puede estar vacío </small>
 				</div>
 				
 				<div id="administrativo" style="display: none;">	
 					<h4>Datos requeridos para Usuarios de Tipo Administrativo</h4>						
 					<label for="area" class="form-label mt-3">Área:</label>
 				    <input type="text" name="area" id="area" class="form-control"/>
+				    <small id="areaHelp" class="text-danger" style="display:none;">El campo área no puede estar vacío </small>
 
-					<label for="experienciaPrevia" class="form-label mt-3">Experiencia Previa:</label>
-				    <input type="text" name="experienciaPrevia" id="experienciaPrevia" class="form-control"/>				       		    
+					<label for="experienciaPrevia" class="form-label mt-3">Experiencia previa:</label>
+				    <input type="text" name="experienciaPrevia" id="experienciaPrevia" class="form-control"/>
+				    <small id="experienciaPreviaHelp" class="text-danger" style="display:none;">El campo experiencia previa no puede estar vacío </small>       		    
 				</div>
 				
 		        <input type="hidden" name="opcion" value="crearUsuario">
@@ -153,7 +164,7 @@
 		
 		    </div>
 		  </div>
-		<!-- Fin Codigo del Formulario Login -->
+		<!-- Fin Codigo del Formulario Crear Usuario-->
 			
 
 		</div>
@@ -167,7 +178,7 @@
           src="https://code.jquery.com/jquery-3.7.0.min.js"
           integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
           crossorigin="anonymous">
-        </script>
+        </script>
 		<script type="text/javascript" src="js/mostrar-id-usuario.js"></script>
 	    <!-- Fin JQuery -->
 	    

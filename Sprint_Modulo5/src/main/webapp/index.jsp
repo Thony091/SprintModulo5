@@ -14,11 +14,15 @@
 	    <!-- End Navbar -->
 	    
 		<div class="container mt-5">
-			<h1 class="text-center">Sistema Asesoria de Prevención de Riesgos</h1>
-			<p class="text-center fs-4" >Sistema de información que permitirá administrar los principales procesos que se llevan a cabo día a día</p>
+			<h1 class="fs-1 text-center d-block d-sm-block">Sistema de Asesoria <span class="d-none d-sm-block d-md-block">de
+				Prevención de Riesgos</span></h1>
+				
+			<div>
+			<p class="fw-bold d-lg-block d-md-block d-sm-block d-none text-center" >Sistema de información que permitirá administrar los principales procesos que se llevan a cabo día a día</p>
+			</div>
 								
 			<div class="row mt-4 d-flex justify-content-between">			
-				<div class="card col-xs-12 col-sm-6 col-md-3" >
+				<div class="card d-inline-block col-12 col-sm-5 col-md-5 col-lg-3 mb-3 mx-auto" >
 					<img src="https://img.freepik.com/vector-gratis/nuevo-concepto-mensaje-pagina-destino_52683-26980.jpg" class="card-img-top" alt="Celular con carta de mensaje">
 					<div class="card-body">							
 						<p class="card-text">Envianos un mensaje.</p>
@@ -26,7 +30,7 @@
 					</div>						
 				</div>
 					
-				<div class="card col-xs-12 col-sm-6 col-md-3" >
+				<div class="card d-inline-block col-12 col-sm-5 col-md-5 col-lg-3 mb-3 mx-auto" >
 					<img src="https://media.gettyimages.com/id/1269452744/es/vector/lista-de-verificaci%C3%B3n-portapapeles-e-icono-de-l%C3%A1piz-dise%C3%B1o-plano-sobre-fondo-blanco.jpg?s=612x612&w=gi&k=20&c=FwNYmm4Bpsn07BCOUNo37yr1EWwT68mNBy_nYZV5Ee0=" class="card-img-top" alt="escritorio con hojas y checks">
 					<div class="card-body">							
 						<p class="card-text">Espacio para Creación y Listado de capacitaciones. </p> 
@@ -36,7 +40,7 @@
 					</div>
 				</div>
 					
-				<div class="card col-xs-12 col-sm-6 col-md-3" >
+				<div class="card mx-auto col-12 col-sm-6 col-md-5 col-lg-3 mb-3" >
 					<img src="https://cdn-icons-png.flaticon.com/512/753/753210.png">
 					<div class="card-body">							
 						<p class="card-text">Espacio para Creación y Listado de usuarios. </p>

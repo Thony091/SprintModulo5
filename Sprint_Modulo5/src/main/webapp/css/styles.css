@@ -45,10 +45,33 @@ h1 {
 	font-weight: bold;
 }
 
-h2,
-h3,
-h4,
-h5 {
+h2,h3,h4,h5 {
 	color: #339;
 	text-shadow: 1px 1px 2px black;
+}
+
+p {
+	font-size: 12px;
+}
+
+label {
+	font-size: 14px;
+}
+
+@media ( min-width : 576px) {
+	label {
+		font-size: 14px;
+	}
+	p {
+		font-size: 14px;
+	}
+}
+
+@media ( min-width : 768px) {
+	label {
+		font-size: 16px;
+	}
+	p {
+		font-size: 16px;
+	}
 }

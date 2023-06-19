@@ -1,195 +1,170 @@
-
 // Validacion de Campos con JavaScript
+document.querySelector("#crearusuario-form").addEventListener("submit", function(event){
+	event.preventDefault();
 
-document.addEventListener("DOMContentLoaded", function() {
 	// Obtener el formulario y sus campos
-	let form = document.querySelector("#form-crear-usuario");
-	let user = document.querySelector("#user");
-	let password = document.querySelector("#password");
-	let run = document.querySelector("#run");
-	let fechaNacimiento = document.querySelector("#fechaNacimiento");
-	let names = document.querySelector("#names");
-	let lastName = document.querySelector("#lastname");
-	let tipoUser = document.querySelector("#tipousuario");
+	let user = document.querySelector("#user").value;
+	let password = document.querySelector("#password").value;
+	let run = document.querySelector("#run").value;
+	let fechaNacimiento = document.querySelector("#fechaNacimiento").value;
+	let names = document.querySelector("#names").value;
+	let lastName = document.querySelector("#lastName").value;
+	let tipoUser = document.querySelector("#tipoUsuario").value;
 	//tipo cliente    
-	let telefono = document.querySelector("#telefono");
-	let afp = document.querySelector("#afp");
-	let sistemaSalud = document.querySelector("#sistemasalud");
-	let direccion = document.querySelector("#direccion");
-	let comuna = document.querySelector("#comuna");
-	let edad = document.querySelector("#edad");
+	let telefono = document.querySelector("#telefono").value;
+	let afp = document.querySelector("#afp").value;
+	let sistemaSalud = document.querySelector("#sistemaSalud").value;
+	let direccion = document.querySelector("#direccion").value;
+	let comuna = document.querySelector("#comuna").value;
+	let edad = document.querySelector("#edad").value;
 	//profesional    
-	let titulo = document.querySelector("#titulo");
-	let fechaIngreso = document.querySelector("#fechaingreso");
+	let titulo = document.querySelector("#titulo").value;
+	let fechaIngreso = document.querySelector("#fechaIngreso").value;
 	//administrativo
-	let area = document.querySelector("#area");
-	let experienciaPrevia = document.querySelector("#experienciaprevia");
-
-
-	function creaUsuarioValidate() {
-
-		let userValue = user.value;
-		let passwordValue = password.value;
-		let runValue = run.value;
-		let fechaNacimientoValue = fechaNacimiento.value;
-		let namesValue = names.value;
-		let lastNameValue = lastName.value;
-
-		//let tipoUserValue = tipoUser.value;
-		//cliente
-		let telefonoValue = telefono.value;
-		let afpValue = afp.value;
-		let sistemaSaludValue = sistemaSalud.value;
-		let direccionValue = direccion.value;
-		let comunaValue = comuna.value;
-		let edadValue = edad.value;
-		//profesional
-		let tituloValue = titulo.value;
-		let fechaIngresoValue = fechaIngreso.value;
-		//administrativo
-		let areaValue = area.value;
-		let experienciaPreviaValue = experienciaPrevia.value;
-
+	let area = document.querySelector("#area").value;
+	let experienciaPrevia = document.querySelector("#experienciaPrevia").value;
+	let isValid = true;
+	
 		// user    
-		if (userValue.length == 0) {
-			document.querySelector("#userHelp").innerHTML = "El campo no puede estar vacio.";
-
+		if (user.trim() === "") {
+			isValid = false;
+			document.querySelector("#userHelp").style.display = "block";
 		} else {
-			document.querySelector("#userHelp").innerHTML = " ";
+			document.querySelector("#userHelp").style.display = "none";
 		}
+		
 		// password
-		if (passwordValue.length == 0) {
-			document.querySelector("#passHelp").innerHTML = "El campo no puede estar vacio.";
-
+		if (password.trim() === "") {
+			isValid = false;
+			document.querySelector("#passwordHelp").style.display = "block";
 		} else {
-			document.querySelector("#passHelp").innerHTML = " ";
+			document.querySelector("#passwordHelp").style.display = "none";
 		}
-		// run      
-		if (runValue.length == 0) {
-			document.querySelector("#runclienteHelp").innerHTML = "El campo no puede estar vacio";
-
-		} else if (runValue.length < 8) {
-			document.querySelector("#runclienteHelp").innerHTML = "El rut debe contener almenos 8 digitos sin guion ni número verificador";
-
-		} else {
-			document.querySelector("#runclienteHelp").innerHTML = " ";
-		}
+		
+		// run
+        if (run.trim() === "") {
+            isValid = false;
+            document.querySelector("#runclienteHelp").style.display = "block";
+            document.querySelector("#runclienteHelp2").style.display = "none";
+        } else if (run.length < 8) {
+            isValid = false;
+            document.querySelector("#runclienteHelp2").style.display = "block";
+            document.querySelector("#runclienteHelp").style.display = "none";
+        } else {
+            document.querySelector("#runclienteHelp").style.display = "none";
+        }
+        
 		//fechaNacimiento
-		if (fechaNacimientoValue.length == 0) {
-			document.querySelector("#fechanacimientoHelp").innerHTML = "El campo no puede estar vacio.";
+		if (fechaNacimiento.trim() === "") {
+			isValid = false;
+			document.querySelector("#fechaNacimientoHelp").style.display = "block";
 		} else {
-			document.querySelector("#fechanacimientoHelp").innerHTML = " ";
+			document.querySelector("#fechaNacimientoHelp").style.display = "none";
 		}
 		//names
-		if (namesValue.length == 0) {
-			document.querySelector("#namesHelp").innerHTML = "El campo no puede estar vacio.";
+		if (names.trim() === "") {
+			isValid = false;
+			document.querySelector("#namesHelp").style.display = "block";
 		} else {
-			document.querySelector("#namesHelp").innerHTML = " ";
+			document.querySelector("#namesHelp").style.display = "none";
 		}
 		//lastname
-		if (lastNameValue.length == 0) {
-			document.querySelector("#lastnameHelp").innerHTML = "El campo no puede estar vacio.";
+		if (lastName.trim() === "") {
+			isValid = false;
+			document.querySelector("#lastNameHelp").style.display = "block";
 		} else {
-			document.querySelector("#lastnameHelp").innerHTML = " ";
+			document.querySelector("#lastNameHelp").style.display = "none";
 		}
 		//tipo
-		switch (tipoUser.Value) {
+		switch (tipoUser) {
 			case "Cliente":
 				//telefono
-				if (telefonoValue.length == 0) {
-					document.querySelector("#telefonoHelp").innerHTML = "El campo no puede estar vacio.";
+				if (telefono.trim() === "") {
+					isValid = false;
+					document.querySelector("#telefonoHelp").style.display = "block";
 				} else {
-					document.querySelector("#telefonoHelp").innerHTML = " ";
+					document.querySelector("#telefonoHelp").style.display = "none";
 				}
 				//afp
-				if (afpValue.length == 0) {
-					document.querySelector("#afpHelp").innerHTML = "El campo no puede estar vacio.";
+				if (afp.trim() === "") {
+					isValid = false;
+					document.querySelector("#afpHelp").style.display = "block";
 				} else {
-					document.querySelector("#afpHelp").innerHTML = " ";
+					document.querySelector("#afpHelp").style.display = "none";
 				}
 				//sistema salud
-				if (sistemaSaludValue.length == 0) {
-					document.querySelector("#sistemasaludHelp").innerHTML = "El campo no puede estar vacio.";
+				if (sistemaSalud.trim() === "") {
+					isValid = false;
+					document.querySelector("#sistemaSaludHelp").style.display = "block";
 				} else {
-					document.querySelector("#sistemasaludHelp").innerHTML = " ";
+					document.querySelector("#sistemaSaludHelp").style.display = "none";
 				}
 				//direccion
-				if (direccionValue.length == 0) {
-					document.querySelector("#direccionHelp").innerHTML = "El campo no puede estar vacio.";
+				if (direccion.trim() === "") {
+					isValid = false;
+					document.querySelector("#direccionHelp").style.display = "block";
 				} else {
-					document.querySelector("#direccionHelp").innerHTML = " ";
+					document.querySelector("#direccionHelp").style.display = "none";
 				}
 				//comuna
-				if (comunaValue.length == 0) {
-					document.querySelector("#comunaHelp").innerHTML = "El campo no puede estar vacio.";
+				if (comuna.trim() === "") {
+					isValid = false;
+					document.querySelector("#comunaHelp").style.display = "block";
 				} else {
-					document.querySelector("#comunaHelp").innerHTML = " ";
+					document.querySelector("#comunaHelp").style.display = "none";
 				}
 				//edad
-				if (edadValue.length == 0) {
-					document.querySelector("#edadHelp").innerHTML = "El campo no puede estar vacio.";
+				if (edad.trim() === "") {
+					isValid = false;
+					document.querySelector("#edadHelp").style.display = "block";
 				} else {
-					document.querySelector("#edadHelp").innerHTML = " ";
+					document.querySelector("#edadHelp").style.display = "none";
 				}
 
 				break;
 			case "Profesional":
 				//titulo
-				if (tituloValue.length == 0) {
-					document.querySelector("#tituloHelp").innerHTML = "El campo no puede estar vacio.";
+				if (titulo.trim() === "") {
+					isValid = false;
+					document.querySelector("#tituloHelp").style.display = "block";
 				} else {
-					document.querySelector("#tituloHelp").innerHTML = " ";
+					document.querySelector("#tituloHelp").style.display = "none";
 				}
 				//fecha ingreso
-				if (fechaIngresoValue.length == 0) {
-					document.querySelector("#fechaingresoHelp").innerHTML = "El campo no puede estar vacio.";
+				if (fechaIngreso.trim() === "") {
+					isValid = false;
+					document.querySelector("#fechaIngresoHelp").style.display = "block";
 				} else {
-					document.querySelector("#fechaingresoHelp").innerHTML = " ";
+					document.querySelector("#fechaIngresoHelp").style.display = "none";
 				}
 				break;
 			case "Administrativo":
 				//area
-				if (areaValue.length == 0) {
-					document.querySelector("#areaHelp").innerHTML = "El campo no puede estar vacio.";
+				if (area.trim() === "") {
+					isValid = false;
+					document.querySelector("#areaHelp").style.display = "block";
 				} else {
-					document.querySelector("#areaHelp").innerHTML = " ";
+					document.querySelector("#areaHelp").style.display = "none";
 				}
 				//experiencia previa
-				if (experienciaPreviaValue.length == 0) {
-					document.querySelector("#fechaingresoHelp").innerHTML = "El campo no puede estar vacio.";
+				if (experienciaPrevia.trim() === "") {
+					isValid = false;
+					document.querySelector("#experienciaPreviaHelp").style.display = "block";
 				} else {
-					document.querySelector("#fechaingresoHelp").innerHTML = " ";
+					document.querySelector("#experienciaPreviaHelp").style.display = "none";
 				}
 				break;
 			default:
 				//este código se ejecutará si ninguno de los casos coincide con la expresión
 				break;
 		}
-		//validacion final
-		if (userValue.length == 0 ||
-			passwordValue.length == 0 ||
-			runValue.length == 0 ||
-			fechaNacimientoValue.length == 0 ||
-			namesValue.length == 0 ||
-			lastNameValue.length == 0
-		) {
-			document.querySelector("#finalHelp").innerHTML = "Debes ingresar todos los datos del formulario.";
-			return false;
-		}
-		//para poner las demas hay que hacer la validacion en 
 
-		//Si todo esta bien y pasaron todas las validaciones, se enviara el formulario.
-		return true;
-	}
-
-	// Agregamos la función de validación al evento submit del formulario
-	form.addEventListener("submit", function(event) {
+	
 
 		//* Si la funcion validate retorna un false no se enviará el formulario
-		if (!creaUsuarioValidate()) {
-
-			event.preventDefault();
+		if (isValid) {
+			event.target.submit();
+			// impido que se envie el formulario            
 		}
-	})
 
 });

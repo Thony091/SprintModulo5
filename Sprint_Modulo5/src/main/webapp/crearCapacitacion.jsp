@@ -22,7 +22,7 @@
 
 				  <h2 class="offset-1 col-10 fs-1 text-center"><strong> Crear capacitacion </strong></h2>
 				  
-				  <form id="form-capacitacion" action="ServletCrudCapacitacion" method="POST" class="offset-1 col-10 form mb-2 mt-3">
+				  <form id="form-capacitacion" action="ServletCrudCapacitacion" method="POST" class="mx-auto col-10 offset-1 col-sm-12 col-md-11 mb-2 mt-3">
 					<div class="form-group fs-3 mt-4">
 						<label for="rutCliente">Rut de cliente:</label>
 						<input 
